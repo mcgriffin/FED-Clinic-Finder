@@ -1,0 +1,443 @@
+/*****************************************************************************
+  walk_in_clinics
+******************************************************************************/
+
+
+
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+
+$visual-grid: false;
+$grid-columns: 15;
+
+
+
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+/*breakpoints*/
+$tablet: new-breakpoint(min-width 450px);
+$desktop: new-breakpoint(min-width 3000px);
+
+$height0: new-breakpoint(min-height 300px);
+$height1: new-breakpoint(min-height 570px);
+$height2: new-breakpoint(min-height 800px);
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+
+/* Cross page styles */
+	body {
+		@include outer-container;
+		font-size: 16px;
+		font-family: Futura, arial, sans-serif;
+		overflow: auto;
+	}
+
+	header {
+		/*border: 2px solid brown;*/
+		padding-top: 4px;
+	}
+
+	footer {
+		border: 1px solid black;
+	}	
+
+	img {
+		width: 100%;
+	}
+
+
+	ul {
+		padding: 0px;
+	}
+
+
+	li {
+		list-style: none;
+	}
+
+
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+/* Top menu bar: home, checkin, stats, search */
+	#menu {
+		display: none;
+		}
+
+	@include media($desktop) {
+		.slicknav_menu {
+			display: none;   
+			}
+
+		#menu {
+			display: inline-block;	
+			}	
+		}
+
+	.menu_button {
+		display: inline-block;
+		border: 1px solid grey;
+		border-radius: 100%;
+		padding: 5px;
+		margin-left: 5px;
+		margin-right: 5px;
+		}
+
+	img.menu_button {
+		width: 40px;
+		height: 40px;
+		}
+
+	nav.icon_list {
+		
+		border: 1px solid grey;
+		margin-top: 0.5em;
+		padding-top: 0.5em;
+		overflow: auto;
+	}
+
+	.i1 {
+		
+		@include span-columns(1);
+		@include shift(0.75);
+		@include omega();
+	}
+
+	.i2 {
+		
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i3 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i4 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.i5 {
+	
+		@include span-columns(1);
+		@include shift(2);
+	}
+
+	.pic {
+		width: 40px;
+		height: 40px;
+		margin: auto;
+	}
+
+	.special_icon_list {
+		padding-top: 1em;
+	}
+
+
+	@include media($tablet) {
+		.pic {
+			width: 60px;
+			height: 60px;
+		
+		}
+	}
+
+/* Map styling and interface buttons */
+	#map-canvas {
+		height: 20em; /*375/16=23.43em*/
+		width: 100%;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
+		border-top: 1px solid grey;
+		}
+
+		#map-canvas_fav {
+		height: 20em; /*375/16=23.43em*/
+		width: 100%;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.5em;
+		border-top: 1px solid grey;
+		}
+
+		@include media($height1) {
+			#map-canvas {
+				height: 28em;
+			}
+		}
+
+	#canvas-holder {
+		display: block;
+		padding-top: 1em;
+		@include span-columns(13);
+		@include shift(1);
+		overflow: auto;
+		}	
+
+		@include media($tablet) {
+			#canvas-holder {
+				width: 50%;
+				margin-left: 25%;
+			}
+		}
+
+
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+
+/* Login screen --> index.html */
+	form.user_credential_entry {
+		/*padding between image and username entry 200/16 = 12.5em */
+		padding-top: 9.5em;	
+	}
+
+	form.search {
+		padding-top: 0.7125em;
+		overflow: auto;
+	}
+
+	form.clinician_search {
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;
+
+		overflow: auto;
+	}
+
+		.clinician_return_results {
+			margin-bottom: 2em;
+		}
+		.banner_logo {
+			@include span-columns(5);
+			@include shift(5);
+		}
+
+		.float_username {
+			border: 1px solid gray;
+			border-radius: 2px;
+			@include span-columns(7);
+			@include shift(4);
+			/*margin between username and password 8/16=0.5em*/
+			margin-bottom: 0.5em;
+			overflow: auto;   
+
+			@include media($tablet) {
+				@include span-columns(5);
+				@include shift(5);
+			}
+
+			@include media($desktop) {
+				@include span-columns(3);
+				@include shift(6);
+			}
+		}
+
+		.float_password {
+			border: 1px solid gray;
+			border-radius: 2px;
+			@include span-columns(7);
+			@include shift(4);
+			/*margin between password and submit button 12/16=0.75em*/
+			margin-bottom: 0.75em;
+			overflow: auto;   
+
+			@include media($tablet) {
+				@include span-columns(5);
+				@include shift(5);
+			}
+
+				@include media($desktop) {
+				@include span-columns(3);
+				@include shift(6);
+			}
+		}
+
+		#user_credential_entry {
+			border-radius: 5px;
+			/*padding on top and bottom 5/16=0.3125*/
+			padding-top: 0.3125em;
+			padding-bottom: 0.3125em;
+			@include span-columns(5);
+			@include shift(5);
+		
+			@include media($tablet) {
+				@include span-columns(3);
+				@include shift(6);   }
+			}
+
+			
+
+	#clinician_search_field {
+		@include span-columns(7);
+		@include shift(1);
+			
+		}
+		#clinician_search {
+		
+		@include span-columns(5);
+		@include shift(1);
+			border-radius: 5px;
+			padding-top: 0.125em;
+			padding-bottom: 0.125em;
+		}
+
+		@include media($tablet) {
+			#clinician_search{
+			@include span-columns(3);
+			@include shift(1);
+			}
+		}
+			.visibility_system_state {
+				background-color: #c1d3d9;
+				padding-top: 40px;
+				padding-bottom: 20px;
+				text-align: center;
+				font-size: 1.2em;
+				position: relative;
+				margin-top: 0px;
+				
+			}
+
+			.deco_bar {
+				@include span-columns(15);
+				text-align: center;
+				overflow: auto;
+				height: 10px;
+				position: relative;
+				margin-top: -13px;
+				background-color: #8AA8BD;
+			}
+
+	.find_a_clinic_button:visited, .checkin_button:visited {
+		color: black;
+	}
+
+/* check_in.html */
+	.return {
+		border: 2px solid black;
+		border-radius: 4px;
+		padding: 4px;
+		margin: 5px;
+		color: black;
+	}
+
+	.return:visited {
+		color: black;
+	}
+
+	img.check_in_icon {
+		width: 250px;
+		margin: auto;
+	}
+
+
+/* find_a_clinic_favourites.html */
+	.clinic_name {
+		padding: 0.6em;
+		margin: 2px;
+		color: black;
+		text-decoration: none;
+		font-size: 1.2em;
+	}
+
+	.clinic_name:visited {
+		color: grey;
+		text-decoration: none;
+	}
+
+/* find_a_clinic_wait_times.html */
+	
+	@include media($tablet) {
+		.clinic_wait_times {
+			padding: 0em;
+		}
+	}
+	
+	.wait_time_list_item {	
+		font-size: 1.2em;
+		padding: 0.5em;
+		margin: 2px;
+		color: black;
+	}
+
+/* find_a_clinic_date_and_time.html */
+	img.date_time_picker {
+		width: 90%;
+		margin-left: 5%;
+	}	
+
+	@include media($tablet) {
+		img.date_time_picker {
+			width: 50%;
+			margin-left: 25%;
+		}
+
+		.clinic {
+			margin-left: 5%;
+			font-size: 1.2em;
+		}
+	}
+
+/* find_a_clinic_clinician.html */
+
+	.clinician_name {
+		padding: 0.18em;
+		padding-left: 1.5em;
+
+		margin: 4px;
+		color: black;
+		text-decoration: none;
+		font-size: 1.2em;
+		border-radius: 4px;
+	}
+
+	.clinician_name:visited {
+		color: grey;
+	}
+
+/* search.html */
+	#search_field1 {
+		@include span-columns(7);
+		@include shift(1);	
+
+	}	
+
+	#search_field2 {
+		@include span-columns(5);
+		@include shift(1);
+		border-radius: 5px;
+		
+	}
+
+	.search_banner {
+		padding-top: 2em;
+	}
+
+	@include media($tablet) {
+		.search_banner {
+			padding-top: 0px;
+		}
+	}
+
+	.spacer {
+		height: 140px;
+		width: 100%;
+	
+		overflow: auto;
+	}
+
+	#center {
+	@include span-columns(11);
+	@include shift(2);
+	color: black;
+	overflow: auto;
+	text-align: center;
+}
