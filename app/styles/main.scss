@@ -148,6 +148,12 @@ $height2: new-breakpoint(min-height 800px);
 		}
 	}
 
+	@include media($tablet) {
+	.sign_in_page  {
+		height: 300px;
+	}
+		
+	}
 /* Map styling and interface buttons */
 	#map-canvas {
 		height: 20em; /*375/16=23.43em*/
