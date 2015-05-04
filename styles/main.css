@@ -1,0 +1,461 @@
+/*****************************************************************************
+  walk_in_clinics
+******************************************************************************/
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*breakpoints*/
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+/* Cross page styles */
+body {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-family: Futura, arial, sans-serif;
+  overflow: auto; }
+  body:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+header {
+  /*border: 2px solid brown;*/
+  padding-top: 4px; }
+
+footer {
+  border: 1px solid black; }
+
+img {
+  width: 100%; }
+
+ul {
+  padding: 0px; }
+
+li {
+  list-style: none; }
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+/* Top menu bar: home, checkin, stats, search */
+#menu {
+  display: none; }
+
+@media screen and (min-width: 3000px)  {
+  .slicknav_menu {
+    display: none; }
+
+  #menu {
+    display: inline-block; }
+ }
+
+.menu_button {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 100%;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px; }
+
+img.menu_button {
+  width: 40px;
+  height: 40px; }
+
+nav.icon_list {
+  border: 1px solid grey;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  overflow: auto; }
+
+.i1 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 5.0847457627%;
+  margin-left: 5.0847457627%;
+  margin-right: 0; }
+  .i1:last-child {
+    margin-right: 0; }
+
+.i2 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 5.0847457627%;
+  margin-left: 13.5593220339%; }
+  .i2:last-child {
+    margin-right: 0; }
+
+.i3 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 5.0847457627%;
+  margin-left: 13.5593220339%; }
+  .i3:last-child {
+    margin-right: 0; }
+
+.i4 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 5.0847457627%;
+  margin-left: 13.5593220339%; }
+  .i4:last-child {
+    margin-right: 0; }
+
+.i5 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 5.0847457627%;
+  margin-left: 13.5593220339%; }
+  .i5:last-child {
+    margin-right: 0; }
+
+.pic {
+  width: 40px;
+  height: 40px;
+  margin: auto; }
+
+.special_icon_list {
+  padding-top: 1em; }
+
+@media screen and (min-width: 450px)  {
+  .pic {
+    width: 60px;
+    height: 60px; }
+ }
+
+/* Map styling and interface buttons */
+#map-canvas {
+  height: 20em;
+  /*375/16=23.43em*/
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid grey; }
+
+#map-canvas_fav {
+  height: 20em;
+  /*375/16=23.43em*/
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid grey; }
+
+@media screen and (min-height: 570px)  {
+  #map-canvas {
+    height: 28em; }
+ }
+
+#canvas-holder {
+  display: block;
+  padding-top: 1em;
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 86.4406779661%;
+  margin-left: 6.7796610169%;
+  overflow: auto; }
+  #canvas-holder:last-child {
+    margin-right: 0; }
+
+@media screen and (min-width: 450px)  {
+  #canvas-holder {
+    width: 50%;
+    margin-left: 25%; }
+ }
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+/* Login screen --> index.html */
+form.user_credential_entry {
+  /*padding between image and username entry 200/16 = 12.5em */
+  padding-top: 9.5em; }
+
+form.search {
+  padding-top: 0.7125em;
+  overflow: auto; }
+
+form.clinician_search {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  overflow: auto; }
+
+.clinician_return_results {
+  margin-bottom: 2em; }
+
+.banner_logo {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 32.2033898305%;
+  margin-left: 33.8983050847%; }
+  .banner_logo:last-child {
+    margin-right: 0; }
+
+.float_username {
+  border: 1px solid gray;
+  border-radius: 2px;
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 45.7627118644%;
+  margin-left: 27.1186440678%;
+  /*margin between username and password 8/16=0.5em*/
+  margin-bottom: 0.5em;
+  overflow: auto; }
+  .float_username:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 450px)  {
+    .float_username {
+      float: left;
+      display: block;
+      margin-right: 1.6949152542%;
+      width: 32.2033898305%;
+      margin-left: 33.8983050847%; }
+      .float_username:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 3000px)  {
+    .float_username {
+      float: left;
+      display: block;
+      margin-right: 1.6949152542%;
+      width: 18.6440677966%;
+      margin-left: 40.6779661017%; }
+      .float_username:last-child {
+        margin-right: 0; } }
+
+.float_password {
+  border: 1px solid gray;
+  border-radius: 2px;
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 45.7627118644%;
+  margin-left: 27.1186440678%;
+  /*margin between password and submit button 12/16=0.75em*/
+  margin-bottom: 0.75em;
+  overflow: auto; }
+  .float_password:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 450px)  {
+    .float_password {
+      float: left;
+      display: block;
+      margin-right: 1.6949152542%;
+      width: 32.2033898305%;
+      margin-left: 33.8983050847%; }
+      .float_password:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 3000px)  {
+    .float_password {
+      float: left;
+      display: block;
+      margin-right: 1.6949152542%;
+      width: 18.6440677966%;
+      margin-left: 40.6779661017%; }
+      .float_password:last-child {
+        margin-right: 0; } }
+
+#user_credential_entry {
+  border-radius: 5px;
+  /*padding on top and bottom 5/16=0.3125*/
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 32.2033898305%;
+  margin-left: 33.8983050847%; }
+  #user_credential_entry:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 450px)  {
+    #user_credential_entry {
+      float: left;
+      display: block;
+      margin-right: 1.6949152542%;
+      width: 18.6440677966%;
+      margin-left: 40.6779661017%; }
+      #user_credential_entry:last-child {
+        margin-right: 0; } }
+
+#clinician_search_field {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 45.7627118644%;
+  margin-left: 6.7796610169%; }
+  #clinician_search_field:last-child {
+    margin-right: 0; }
+
+#clinician_search {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 32.2033898305%;
+  margin-left: 6.7796610169%;
+  border-radius: 5px;
+  padding-top: 0.125em;
+  padding-bottom: 0.125em; }
+  #clinician_search:last-child {
+    margin-right: 0; }
+
+@media screen and (min-width: 450px)  {
+  #clinician_search {
+    float: left;
+    display: block;
+    margin-right: 1.6949152542%;
+    width: 18.6440677966%;
+    margin-left: 6.7796610169%; }
+    #clinician_search:last-child {
+      margin-right: 0; }
+ }
+
+.visibility_system_state {
+  background-color: #c1d3d9;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+  margin-top: 0px; }
+
+.deco_bar {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 100%;
+  text-align: center;
+  overflow: auto;
+  height: 10px;
+  position: relative;
+  margin-top: -13px;
+  background-color: #8AA8BD; }
+  .deco_bar:last-child {
+    margin-right: 0; }
+
+.find_a_clinic_button:visited, .checkin_button:visited {
+  color: black; }
+
+/* check_in.html */
+.return {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  margin: 5px;
+  color: black; }
+
+.return:visited {
+  color: black; }
+
+img.check_in_icon {
+  width: 250px;
+  margin: auto; }
+
+/* find_a_clinic_favourites.html */
+.clinic_name {
+  padding: 0.6em;
+  margin: 2px;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em; }
+
+.clinic_name:visited {
+  color: grey;
+  text-decoration: none; }
+
+/* find_a_clinic_wait_times.html */
+@media screen and (min-width: 450px)  {
+  .clinic_wait_times {
+    padding: 0em; }
+ }
+
+.wait_time_list_item {
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin: 2px;
+  color: black; }
+
+/* find_a_clinic_date_and_time.html */
+img.date_time_picker {
+  width: 90%;
+  margin-left: 5%; }
+
+@media screen and (min-width: 450px)  {
+  img.date_time_picker {
+    width: 50%;
+    margin-left: 25%; }
+
+  .clinic {
+    margin-left: 5%;
+    font-size: 1.2em; }
+ }
+
+/* find_a_clinic_clinician.html */
+.clinician_name {
+  padding: 0.18em;
+  padding-left: 1.5em;
+  margin: 4px;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 4px; }
+
+.clinician_name:visited {
+  color: grey; }
+
+/* search.html */
+#search_field1 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 45.7627118644%;
+  margin-left: 6.7796610169%; }
+  #search_field1:last-child {
+    margin-right: 0; }
+
+#search_field2 {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 32.2033898305%;
+  margin-left: 6.7796610169%;
+  border-radius: 5px; }
+  #search_field2:last-child {
+    margin-right: 0; }
+
+.search_banner {
+  padding-top: 2em; }
+
+@media screen and (min-width: 450px)  {
+  .search_banner {
+    padding-top: 0px; }
+ }
+
+.spacer {
+  height: 140px;
+  width: 100%;
+  overflow: auto; }
+
+#center {
+  float: left;
+  display: block;
+  margin-right: 1.6949152542%;
+  width: 72.8813559322%;
+  margin-left: 13.5593220339%;
+  color: black;
+  overflow: auto;
+  text-align: center; }
+  #center:last-child {
+    margin-right: 0; }
