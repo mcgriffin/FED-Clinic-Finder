@@ -15,7 +15,7 @@
     });
     
    
-    $('#clinician_search_field').floatlabel();
+    // $('#clinician_search_field').floatlabel();
     
 
    
